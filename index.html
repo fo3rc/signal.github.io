@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Send Request Example</title>
+</head>
+<body>
+    <h1>Request Sent Automatically</h1>
+
+    <script>
+        // JavaScript to automatically send a POST request to 192.168.8.163:3000
+        fetch('http://192.168.8.163:3000', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: 'Hello, server!' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Response from server:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    </script>
+</body>
+</html>
